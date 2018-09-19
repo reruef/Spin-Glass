@@ -113,7 +113,7 @@ int init_eps(double eps[ns][ns][ns])
 		for (j=0; j<ns; j++){
 			for(k=0;k<ns;k++){
 		//eps[i][j][k] = (rnd(0)%RMAX) * 2.0 / RMAX - 1.0; //should be random from -1 to 1.0.
-		eps[i][j][k]=1;
+		eps[i][j][k]=-1;
 		//printf("%lf\n",eps[i]);
 	}}}
 }
