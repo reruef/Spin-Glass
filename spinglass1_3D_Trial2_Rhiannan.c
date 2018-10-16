@@ -186,7 +186,7 @@ double autocorrelation(int spins[ns][ns][ns])
 {
  int i; int j; int k;
  int spin_sum=0;
- double average_energy=0;
+ double average_spin=0;
 
 for(i=0;i<ns;i++){
 	for(j=0;j<ns;j++){
@@ -201,9 +201,9 @@ for(i=0;i<ns;i++){
 
 }
 	//printf("Spin sum is %d\n", spin_sum);
-	average_energy=((double) spin_sum)/(ns*ns*ns);
+	average_spin=((double) spin_sum)/(ns*ns*ns);
 	//printf("Average energy is %lf\n", average_energy);
-	return average_energy;	//return spin_sum;
+	return average_spin;	//return spin_sum;
 
 //update spin
 
@@ -228,7 +228,7 @@ int main()
 	//init_eps(eps);
 
  	int spin_sum;
- 	double average_energy;
+ 	double average_spin;
 
 	double eps_x[ns][ns][ns];
 	double eps_y[ns][ns][ns];
@@ -267,7 +267,7 @@ int main()
         loscore = score_state(spins,eps_x,eps_y,eps_z); // initialize the scoring.
 
         kT = 3.3; //restart kT up to starting value. This will decline soon enough. Sim annealing.
-        average_energy= autocorrelation(spins);
+        average_spin= autocorrelation(spins);
       // printf("%lf\n", loscore);
       // exit(0);
 
@@ -296,8 +296,8 @@ int main()
         }//end of for i<BIG loop...looping over the trials
         //fprintf(fout,"%.2lf \n", loscore); // we are printing the lowest energy achieved into the log file. Can make histogram of them.
         avgscore += loscore; //add it up to form average in a moment below.
-        average_energy=autocorrelation(spins);
-        fprintf(f1, "%lf\n", average_energy);
+        average_spin=autocorrelation(spins);
+        fprintf(f1, "%lf\n", average_spin);
     }//end of the for loop...looping over number of iterations.
     //for(i=0;i<BIG;i++)
       fprintf(fout, "%i %lf\n", i, stata[i]/ITR); //prints trial number, like time, and the average energy at that time.
