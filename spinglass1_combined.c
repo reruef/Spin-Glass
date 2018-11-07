@@ -203,7 +203,7 @@ for(i=0;i<ns;i++){
 	return average_spin;	
 
 }
-/*
+
 //TOTAL DELTA ENERGY
 double DeltaE(int sp[ns][ns][ns], double eps_x[ns][ns][ns], double eps_y[ns][ns][ns], double eps_z[ns][ns][ns], int i, int j, int k){
         double deltaE=0.0;
@@ -294,7 +294,6 @@ void updtSpin(int sp[ns][ns][ns], double eps_x[ns][ns][ns], double eps_y[ns][ns]
 //END FUNCTION
 }
 
-*/
 
 
 int main()
